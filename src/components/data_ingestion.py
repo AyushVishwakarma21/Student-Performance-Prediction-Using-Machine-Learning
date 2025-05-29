@@ -47,7 +47,8 @@ class DataIngestion:
 
             )
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e,sys.exc_info())
+            logging.info("Exited the data ingestion method or component")
         
 if __name__=="__main__":
     obj=DataIngestion()

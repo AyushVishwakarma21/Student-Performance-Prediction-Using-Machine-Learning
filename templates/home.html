@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Performance Predictor | Purple Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f0ff 0%, #f8f4ff 100%);
+            color: #4a3c6c;
+            min-height: 100vh;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(120, 87, 184, 0.25);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            margin: 20px auto;
+            position: relative;
+            z-index: 10;
+            border: 1px solid #eee5ff;
+        }
+        
+        .header {
+            background: linear-gradient(120deg, #8a2be2 0%, #9370db 100%);
+            color: white;
+            padding: 45px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -150px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header h2 {
+            font-weight: 300;
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            color: #e0d6ff;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .form-title h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: inline-block;
+            padding-bottom: 15px;
+            color: #6a4caf;
+            position: relative;
+        }
+        
+        .form-title h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(to right, #8a2be2, #9370db);
+            border-radius: 3px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .form-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #5a4a79;
+            font-size: 1.15rem;
+            padding-left: 8px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px 22px;
+            border: 2px solid #e9e1ff;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background-color: #faf8ff;
+            color: #5a4a79;
+            box-shadow: inset 0 2px 8px rgba(138, 43, 226, 0.05);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #a78bfa;
+            box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.2);
+            background-color: white;
+        }
+        
+        .input-icon {
+            position: absolute;
+            right: 22px;
+            top: 50px;
+            color: #8a6cbf;
+            font-size: 1.2rem;
+        }
+        
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to right, #8a2be2, #9370db);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 30px;
+            letter-spacing: 0.8px;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .btn-submit::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, #9370db, #8a2be2);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-submit:hover::before {
+            width: 100%;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(138, 43, 226, 0.5);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(-2px);
+        }
+        
+        .btn-icon {
+            margin-right: 12px;
+        }
+        
+        .result-container {
+            margin-top: 40px;
+            padding: 35px 40px;
+            background: linear-gradient(135deg, #f0e9ff 0%, #e6ddff 100%);
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #d9cfff;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+        }
+        
+        .result-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #8a2be2, #9370db);
+        }
+        
+        .result-container h2 {
+            font-size: 1.9rem;
+            color: #5a4a79;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .prediction-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #6a4caf;
+            background: white;
+            display: inline-block;
+            padding: 20px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.15);
+            margin: 20px 0;
+            border: 2px solid #e9e1ff;
+            min-width: 250px;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-description {
+            font-size: 1.1rem;
+            color: #7a6a99;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 240px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(138, 43, 226, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid #eee5ff;
+            text-align: center;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(138, 43, 226, 0.2);
+            border-color: #d9cfff;
+        }
+        
+        .feature i {
+            font-size: 3.2rem;
+            color: #8a2be2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #f0e9ff 0%, #e6ddff 100%);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.15);
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #6a4caf;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        
+        .feature p {
+            color: #7a6a99;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0 15px;
+            color: #7a6a99;
+            font-size: 1.05rem;
+            margin-top: 40px;
+            width: 100%;
+        }
+        
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .footer a {
+            color: #8a2be2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            color: #6a4caf;
+            text-decoration: underline;
+        }
+        
+        .decoration {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.05;
+            font-size: 20rem;
+            color: #8a2be2;
+            pointer-events: none;
+        }
+        
+        .dec-1 {
+            top: 50px;
+            left: 50px;
+            transform: rotate(15deg);
+        }
+        
+        .dec-2 {
+            bottom: 50px;
+            right: 50px;
+            transform: rotate(-20deg);
+        }
+        
+        @media (max-width: 900px) {
+            .header {
+                padding: 35px 30px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 40px 30px;
+            }
+            
+            .form-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .prediction-value {
+                font-size: 3.2rem;
+                padding: 15px 40px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .form-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .prediction-value {
+                font-size: 2.8rem;
+                padding: 12px 30px;
+                min-width: auto;
+            }
+            
+            .btn-submit {
+                padding: 18px;
+                font-size: 1.2rem;
+            }
+            
+            .feature {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration dec-1">
+        <i class="fas fa-calculator"></i>
+    </div>
+    
+    <div class="decoration dec-2">
+        <i class="fas fa-chart-line"></i>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Academic Performance Predictor</h1>
+                <h2>Advanced Machine Learning for Forecasting Student Exam Results</h2>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="form-title">
+                <h1>Performance Prediction Form</h1>
+            </div>
+            
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+                <div class="form-row">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option selected disabled value="">Select your Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <i class="fas fa-venus-mars input-icon"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="race_ethnicity">Race or Ethnicity</label>
+                            <select class="form-control" id="race_ethnicity" name="race_ethnicity" required>
+                                <option selected disabled value="">Select Ethnicity</option>
+                                <option value="group A">Group A</option>
+                                <option value="group B">Group B</option>
+                                <option value="group C">Group C</option>
+                                <option value="group D">Group D</option>
+                                <option value="group E">Group E</option>
+                            </select>
+                            <i class="fas fa-globe-americas input-icon"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="parental_level_of_education">Parental Level of Education</label>
+                            <select class="form-control" id="parental_level_of_education" name="parental_level_of_education" required>
+                                <option selected disabled value="">Select Parent Education</option>
+                                <option value="associate's degree">Associate's Degree</option>
+                                <option value="bachelor's degree">Bachelor's Degree</option>
+                                <option value="high school">High School</option>
+                                <option value="master's degree">Master's Degree</option>
+                                <option value="some college">Some College</option>
+                                <option value="some high school">Some High School</option>
+                            </select>
+                            <i class="fas fa-user-graduate input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="lunch">Lunch Type</label>
+                            <select class="form-control" id="lunch" name="lunch" required>
+                                <option selected disabled value="">Select Lunch Type</option>
+                                <option value="free/reduced">Free/Reduced</option>
+                                <option value="standard">Standard</option>
+                            </select>
+                            <i class="fas fa-utensils input-icon"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="test_preparation_course">Test Preparation Course</label>
+                            <select class="form-control" id="test_preparation_course" name="test_preparation_course" required>
+                                <option selected disabled value="">Select Test Course</option>
+                                <option value="none">None</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <i class="fas fa-book input-icon"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="writing_score">Writing Score (out of 100)</label>
+                            <input class="form-control" type="number" id="writing_score" name="writing_score" 
+                                   placeholder="Enter your Writing score" min="0" max="100" required>
+                            <i class="fas fa-pen input-icon"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reading_score">Reading Score (out of 100)</label>
+                            <input class="form-control" type="number" id="reading_score" name="reading_score" 
+                                   placeholder="Enter your Reading Score" min="0" max="100" required>
+                            <i class="fas fa-book-open input-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-calculator btn-icon"></i> Predict Your Maths Score
+                </button>
+            </form>
+            
+            <div class="result-container">
+                <h2>Predicted Maths Score</h2>
+                <div class="prediction-value">{{ results }}</div>
+                <p class="result-description">Based on comprehensive analysis of academic factors using machine learning algorithms</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <h3>Advanced Algorithm</h3>
+                    <p>Our predictive model analyzes 7 key factors to forecast math performance with high accuracy</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Performance Insights</h3>
+                    <p>Identify strengths and weaknesses to optimize study strategies and improve outcomes</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure & Private</h3>
+                    <p>All data is encrypted and processed securely with no personal information stored</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2023 Academic Performance Predictor | Developed with Machine Learning</p>
+        <p>This tool helps educators and students make data-driven decisions about academic performance</p>
+    </div>
+</body>
+</html>
