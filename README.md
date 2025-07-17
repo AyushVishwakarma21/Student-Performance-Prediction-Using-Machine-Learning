@@ -59,7 +59,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 👩‍🏫 Gender-Based Performance
-![Gender Distribution](images\Total_average_vs_Math_average_marks_of_both_genders.png)
+![Gender Distribution](images/Total_average_vs_Math_average_marks_of_both_genders.png)
 
 - **Females** perform better in **reading** and **writing**.
 - **Males** show slightly higher performance in **math**.
