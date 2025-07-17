@@ -27,7 +27,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ## 📊 Exploratory Data Analysis (EDA)
 
 ### 📌 Average Scores by Race/Ethnicity
-![Average Scores by Race]("C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\average of student score based on race ethnicity.png")
+![Average Scores by Race](C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\average of student score based on race ethnicity.png)
 
 - **Group E** students have the highest average in all subjects.
 - **Group A** performs the lowest overall.
@@ -35,7 +35,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 🍽️ Impact of Lunch Type on Performance
-![Scores vs Lunch Type]("C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score based on lunch type.png")
+![Scores vs Lunch Type](C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score based on lunch type.png)
 
 - Students with **standard lunch** have higher average scores.
 - Socio-economic status plays a major role in academic outcomes.
@@ -43,7 +43,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 🎓 Scores by Parental Education Level
-![Parental Education]("C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score based on parents education.png")
+![Parental Education](C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score based on parents education.png)
 
 - Higher **parental education** is linked with better student performance.
 - Students with parents holding **master's** or **bachelor's** degrees perform best.
@@ -51,7 +51,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 🌍 Distribution by Race/Ethnicity
-![Race Distribution]("C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score based on race ethnicity.png")
+![Race Distribution](C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score based on race ethnicity.png)
 
 - Group C and Group D show more consistent performance.
 - Group A has a broader spread of lower scores.
@@ -59,7 +59,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 👩‍🏫 Gender-Based Performance
-![Gender Distribution]("C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score.png")
+![Gender Distribution](C:\Users\ayush\OneDrive\Pictures\studentperformancepredictionpics\count vs average of student score.png)
 
 - **Females** perform better in **reading** and **writing**.
 - **Males** show slightly higher performance in **math**.
