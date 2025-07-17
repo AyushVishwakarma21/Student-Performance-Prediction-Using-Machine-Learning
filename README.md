@@ -27,7 +27,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ## 📊 Exploratory Data Analysis (EDA)
 
 ### 📌 Average Scores by Race/Ethnicity
-![Average Scores by Race](images/average of student score based on race ethnicity.png)
+![Average Scores by Race](images\average_of_student_score_based_on_race_ethnicity.png)
 
 - **Group E** students have the highest average in all subjects.
 - **Group A** performs the lowest overall.
@@ -35,7 +35,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 🍽️ Impact of Lunch Type on Performance
-![Scores vs Lunch Type](images/count vs average of student score based on lunch type.png)
+![Scores vs Lunch Type](images\count_vs_average_of_student_score_based_on_lunch_type.png)
 
 - Students with **standard lunch** have higher average scores.
 - Socio-economic status plays a major role in academic outcomes.
@@ -43,7 +43,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 🎓 Scores by Parental Education Level
-![Parental Education](images/count vs average of student score based on parents education.png)
+![Parental Education](images\count_vs_average_of_student_score_based_on_parents_education.png)
 
 - Higher **parental education** is linked with better student performance.
 - Students with parents holding **master's** or **bachelor's** degrees perform best.
@@ -51,7 +51,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 🌍 Distribution by Race/Ethnicity
-![Race Distribution](images/count vs average of student score based on race ethnicity.png)
+![Race Distribution](images/count_vs_average_of_student_score_based_on_race_ethnicity.png)
 
 - Group C and Group D show more consistent performance.
 - Group A has a broader spread of lower scores.
@@ -59,7 +59,7 @@ This project analyzes and predicts student academic performance in **math**, **r
 ---
 
 ### 👩‍🏫 Gender-Based Performance
-![Gender Distribution](images/count vs average of student score.png)
+![Gender Distribution](images/count_vs_average_of_student_score.png)
 
 - **Females** perform better in **reading** and **writing**.
 - **Males** show slightly higher performance in **math**.
